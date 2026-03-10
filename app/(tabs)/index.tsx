@@ -257,7 +257,7 @@ export default function HomeScreen() {
       <View style={styles.header}>
         <View style={styles.logoRow}>
           <Image
-            source={require("@/assets/images/logo.png")}
+            source={require("@/assets/images/icon.png")}
             style={styles.logo}
             contentFit="contain"
           />
