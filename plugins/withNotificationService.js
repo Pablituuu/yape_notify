@@ -5,12 +5,12 @@ module.exports = function withNotificationService(config) {
     const manifest = config.modResults.manifest;
     const mainApplication = manifest.application[0];
 
-    // Add tools namespace to manifest
+    // Add tools namespace for merger conflict resolution
     if (!manifest.$["xmlns:tools"]) {
       manifest.$["xmlns:tools"] = "http://schemas.android.com/tools";
     }
 
-    // Add tools:replace to application to avoid allowBackup conflict
+    // Force allowBackup to be true and use tools:replace to avoid library conflicts
     mainApplication.$["tools:replace"] = "android:allowBackup";
     mainApplication.$["android:allowBackup"] = "true";
 
